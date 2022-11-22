@@ -90,7 +90,7 @@ int print_percent(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-	return (write(1, "&&", 1));
+	return (write(1, "%%", 1));
 }
 /************************* PRINT INT *************************/
 /**
@@ -153,7 +153,7 @@ int print_binary(va_list types, char buffer[],
 	UNUSED(prcision);
 	UNUSED(size);
 	n = va_arg(types, unsigned int);
-	m = 2147483648; /* (2 ^ 31) */
+	m = 2147483648; 
 	a[0] = n / m;
 	for (i = 1; i < 32; i++)
 	{
