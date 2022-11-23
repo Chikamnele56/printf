@@ -10,7 +10,7 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int handler_write_char(char c, char buffer[],
+int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
 { /* char is stored at left and padding at buffer's right */
 	int i = 0;
@@ -86,9 +86,9 @@ int write_num(int ind, char buffer[],
 	int i, padd_start = 1;
 
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
-		return (0); /* printf(".0d", 0) no char is printed */
+		return (0);
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
-		buffer[ind] = padd = ' '; /* width is displayed with padding ' ' */
+		buffer[ind] = padd = ' ';
 	if (prec > 0 && prec < length)
 		padd = ' ';
 	while (prec > length)
